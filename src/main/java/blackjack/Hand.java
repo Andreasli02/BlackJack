@@ -16,6 +16,10 @@ public class Hand {
         }
     }
 
+    public int getScore(){
+        
+    }
+
     public void addCard(Card newCard){
 		this.hand.add(newCard);
 	}
