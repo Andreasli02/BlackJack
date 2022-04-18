@@ -18,7 +18,6 @@ public class BlackjackApp extends Application {
         primaryStage.setTitle("Blackjack");
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Blackjack.fxml"))));
         primaryStage.show();
-    }  
-
+    }
 }
     

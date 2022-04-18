@@ -48,7 +48,7 @@ public class Hand {
     }
 
     public boolean bust(){
-        return getScore() > 22;
+        return getScore() > 21;
     }
 
     // Used by cardDeck to deal cards
