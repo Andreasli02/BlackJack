@@ -1,77 +1,39 @@
 package blackjack;
 
-import java.util.ArrayList;
-import java.util.Collections;
+public class Card{
+    private char suit;
+    private int face;
 
-public class Card implements Comparable<Card> {
-    private char kortfarge;
-    private int tallverdi;
-
-    public Card(char newKortfarge, int newTallverdi){
-        if((newKortfarge == 'S') || (newKortfarge == 'H')||(newKortfarge == 'D')|| (newKortfarge == 'C')){
-            this.kortfarge = newKortfarge;
+    public Card(char newSuit, int newFace){
+        if((newSuit == 'S') || (newSuit == 'H')||(newSuit == 'D')|| (newSuit == 'C')){
+            this.suit = newSuit;
         } else {
             throw new IllegalArgumentException("Suit cannot contain illegal letters.");
         }
-        if (newTallverdi >= 1 && newTallverdi <= 13){
-            this.tallverdi = newTallverdi;
+        if (newFace >= 1 && newFace <= 13){
+            this.face = newFace;
         } else {
-            throw new IllegalArgumentException("value plates must be between 1 and 13.");
+            throw new IllegalArgumentException("value must be between 1 and 13.");
         }
     }
 
     public char getSuit(){
-        return kortfarge;
+        return suit;
     }
 
     public int getFace(){
-        return tallverdi;
+        return face;
     }
-
-
 
     @Override
     public String toString() {
-        return kortfarge + String.valueOf(tallverdi);
+        return suit + String.valueOf(face);
     }
-
-    @Override
-    public int compareTo(Card o) {
-		if (this.getSuit() == o.getSuit()) {
-			if(this.getFace() == o.getFace()) {
-				return  0;
-			}
-			else if(this.getFace() > o.getFace()) {
-				return  1;
-			}
-			else if(this.getFace() < o.getFace()) {
-				return  -1;
-			}
-		}
-		else {
-			if((this.getSuit() == 'C') ||(this.getSuit() == 'D' && ((o.getSuit()=='H') || (o.getSuit() == 'S'))) || (this.getSuit() == 'H' && o.getSuit() == 'S')) {
-				return  -1;
-			}
-			else {
-				return  1;
-			}
-		}
-        return 0;
-	}
 
     public static void main(String[] args) {
-        ArrayList<Card> arr = new ArrayList<Card>();
-        arr.add(new Card('S',2));
-        arr.add(new Card('H',1));
-        arr.add(new Card('S',1));
-        arr.add(new Card('D',1));
-        arr.add(new Card('S',13));
-        arr.add(new Card('C',1));
-        arr.add(new Card('S',10));
-
-        System.out.println(arr);
-        Collections.sort(arr);
-        arr.stream().forEach(m -> System.out.println(m));
-    }
-    
+		System.out.println("\u2665 This should be a Hearts suit symbol.");
+		System.out.println("\u2666 This should be a Diamonds suit symbol.");
+		System.out.println("\u2663 This should be a Clubs suit symbol.");
+		System.out.println("\u2660 This should be a Spades suit symbol.");
+	}
 }
