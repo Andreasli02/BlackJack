@@ -1,6 +1,5 @@
 package blackjack;
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 public class Hand {
     private ArrayList<Card> hand = new ArrayList<Card>();
@@ -17,23 +16,39 @@ public class Hand {
         }
     }
 
-    public int getCardCount(Predicate<Card> predicate) {
-		int count = 0; 
+    public int getAceCount() {
+		int aceCount = 0; 
 		for (Card card : hand) {
-			if (predicate.test(card)) {
-				count++;
-			}
+			if (card.getFace() == 1)
+				aceCount++;
 		}
-		return count;
+		return aceCount;
 	}
 
     public int getScore(){
         int score = 0;
+        int aceAmount = getAceCount();
 
+        for (Card card : hand){
+            if(card.getFace() > 10){
+                score += 10;
+            }
+            else if(card.getFace() < 2){
+                score += 11;
+            }
+            else{
+                score += card.getFace();
+            } 
+            if(score > 21 && aceAmount != 0){
+                score -= 10;
+                aceAmount -= 1;
+            }
+        }
+        return score;
     }
 
     public boolean bust(){
-
+        return getScore() > 22;
     }
 
     // Used by cardDeck to deal cards
@@ -41,7 +56,7 @@ public class Hand {
         if(hand.size() >= 7){
             throw new IllegalArgumentException("Hand cannot have more than 7 cards");
         }
-		this.hand.add(newCard);
+		hand.add(newCard);
 	}
 
     
@@ -54,9 +69,11 @@ public class Hand {
         Hand player = new Hand();
         CardDeck newDeck = new CardDeck();
         newDeck.shuffleDeck();
-        newDeck.deal(player, 7);
+        newDeck.deal(player, 4);
         System.out.println(player.getCard(2));
         System.out.println(player);
-
+        System.out.println(player.getAceCount());
+        System.out.println(player.getScore());
+        System.out.println(player.bust());
     }
 }
