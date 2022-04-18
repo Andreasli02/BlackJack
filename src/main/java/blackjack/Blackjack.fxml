@@ -6,26 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
    <children>
-      <Button layoutX="400.0" layoutY="450.0" mnemonicParsing="false" text="Double" />
-      <Button layoutX="499.0" layoutY="450.0" mnemonicParsing="false" text="Hit" />
-      <Button layoutX="575.0" layoutY="450.0" mnemonicParsing="false" text="Stand" />
-      <Button layoutX="600.0" layoutY="540.0" mnemonicParsing="false" text="Deal Now" />
+      <Button layoutX="390.0" layoutY="450.0" mnemonicParsing="false" text="Double" />
+      <Button layoutX="493.0" layoutY="450.0" mnemonicParsing="false" text="Hit" />
+      <Button layoutX="567.0" layoutY="450.0" mnemonicParsing="false" text="Stand" />
+      <Button layoutX="594.0" layoutY="540.0" mnemonicParsing="false" text="Deal Now" />
 
-      <TextField fx:id="bet" layoutX="441.0" layoutY="540.0" />
+      <TextField fx:id="bet" layoutX="434.0" layoutY="540.0" />
       
       <Text layoutX="50.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" />
       <Text layoutX="150.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Bet:" />
-      <Text layoutX="467.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLACE YOUR BETS" />
+      <Text layoutX="460.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLACE YOUR BETS" />
 
-      <TextArea layoutX="62.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="200.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="330.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="466.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="600.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="739.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea layoutX="874.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="40.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="175.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="310.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="445.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="580.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="715.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea layoutX="850.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
       
       <TextArea fx:id="balance" layoutX="33.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <TextArea fx:id="totalBet" layoutX="136.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />

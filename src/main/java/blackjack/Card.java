@@ -25,15 +25,32 @@ public class Card{
         return face;
     }
 
-    @Override
-    public String toString() {
-        return suit + String.valueOf(face);
+    private String suitToSymbol(char suit){
+        if(suit == 'S')
+            return "\u2660";
+        if(suit == 'H')
+            return "\u2665";
+        if(suit == 'D')
+            return "\u2666";
+        if(suit == 'C')
+            return "\u2663";
+        return null;
     }
 
-    public static void main(String[] args) {
-		System.out.println("\u2665 This should be a Hearts suit symbol.");
-		System.out.println("\u2666 This should be a Diamonds suit symbol.");
-		System.out.println("\u2663 This should be a Clubs suit symbol.");
-		System.out.println("\u2660 This should be a Spades suit symbol.");
-	}
+    private String faceToChar(int face){
+        if(face == 1)
+            return "A";
+        if(face == 11)
+            return "J";
+        if(face == 12)
+            return "Q";
+        if(face == 13)
+            return "K";
+        return String.valueOf(face);
+    }
+
+    @Override
+    public String toString() {
+        return suitToSymbol(suit) + " " + faceToChar(face);
+    }
 }
