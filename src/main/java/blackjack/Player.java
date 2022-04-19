@@ -6,12 +6,12 @@ public class Player {
     private Hand playerHand;
 
     public Player(){
-        this.playerHand = new Hand();
-        this.balance = 2500;
+        playerHand = new Hand();
+        balance = 2500;
     }
 
     public int getBalance(){
-        return this.balance;
+        return balance;
     }
 
     public int setBalance(int newBalance){
@@ -19,24 +19,56 @@ public class Player {
     }
 
     public int getBetsize(){
-        return this.betSize;
+        return betSize;
     }
 
-    public boolean PlayerWinHand(){
-        return true;
+    public Hand getPlayerHand(){
+        return playerHand;
     }
 
-    public int updateBalance(){
-        return 0;
+    public void placeBetsize(int newBetSize){
+        if (newBetSize < 0){
+            throw new IllegalArgumentException("Bet size must be a positive number");
+        }
+        if (newBetSize > balance){
+            throw new IllegalArgumentException("You cannot bet more than own");
+        }
+        betSize = newBetSize;
+        balance -= newBetSize;
+    }
+
+    public void win(){
+        balance += 2 *betSize;
+        betSize = 0;
+    }
+
+    public void tie(){
+        balance += betSize;
+        betSize = 0;
+    }
+
+    public void lose(){
+        betSize = 0;
+    }
+
+    public void blackjack(){
+        balance += 2.5 *betSize;
+        betSize = 0;
     }
 
     @Override
     public String toString() {
-        return "balance=" + String.valueOf(balance) + " playerHand = " + String.valueOf(playerHand);
+        return "balance=" + String.valueOf(balance) + " betSize=" + String.valueOf(betSize) + " playerHand = " + String.valueOf(playerHand);
     }
 
     public static void main(String[] args) {
         Player Li = new Player();
+        CardDeck newDeck = new CardDeck();
+        newDeck.shuffleDeck();
+        newDeck.deal(Li.getPlayerHand(), 3);
+        System.out.println(Li);
+        Li.placeBetsize(500);
+        Li.blackjack();
         System.out.println(Li);
     }
 }

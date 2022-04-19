@@ -4,7 +4,11 @@ public class Dealer {
     private Hand dealerHand;
 
     Dealer(){
-        this.dealerHand = new Hand();
+        dealerHand = new Hand();
+    }
+
+    public Hand getHand(){
+        return dealerHand;
     }
     
 }
