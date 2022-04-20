@@ -7,8 +7,11 @@ public class Dealer {
         dealerHand = new Hand();
     }
 
-    public Hand getHand(){
+    public Hand getDealerHand(){
         return dealerHand;
     }
-    
+
+    public String toString(){
+        return String.valueOf(dealerHand);
+    }
 }

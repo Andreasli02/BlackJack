@@ -37,6 +37,11 @@ public class Player {
         balance -= newBetSize;
     }
 
+    public void doubleBet(){
+        balance -= betSize;
+        this.betSize = betSize * 2;
+    }
+
     public void win(){
         balance += 2 *betSize;
         betSize = 0;
@@ -67,8 +72,8 @@ public class Player {
         newDeck.shuffleDeck();
         newDeck.deal(Li.getPlayerHand(), 3);
         System.out.println(Li);
-        Li.placeBetsize(500);
-        Li.blackjack();
+        Li.placeBetsize(2000);
+        Li.lose();
         System.out.println(Li);
     }
 }

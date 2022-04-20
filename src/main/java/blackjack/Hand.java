@@ -47,8 +47,12 @@ public class Hand {
         return score;
     }
 
-    public boolean bust(){
+    public boolean isBust(){
         return getScore() > 21;
+    }
+
+    public boolean isBlackjack(){
+        return getCardCount() == 2 && getScore() == 21;
     }
 
     // Used by cardDeck to deal cards
@@ -59,6 +63,9 @@ public class Hand {
 		hand.add(newCard);
 	}
 
+    public void clearHand(){
+        hand.clear();
+    }
     
     @Override
     public String toString() {
@@ -70,10 +77,11 @@ public class Hand {
         CardDeck newDeck = new CardDeck();
         newDeck.shuffleDeck();
         newDeck.deal(player, 4);
-        System.out.println(player.getCard(2));
         System.out.println(player);
         System.out.println(player.getAceCount());
         System.out.println(player.getScore());
-        System.out.println(player.bust());
+        System.out.println(player.isBust());
+        player.clearHand();
+        System.out.println(player);
     }
 }
