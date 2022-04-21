@@ -45,20 +45,23 @@ public class Main {
     }
 
     public void turnFinish(){
-        if(player.getPlayerHand().isBust()){
+        Hand playerHand = player.getPlayerHand();
+        Hand dealerHand = dealer.getDealerHand();
+        
+        if(playerHand.isBust()){
             player.lose();
         } 
-        if (player.getPlayerHand().isBlackjack() && !dealer.getDealerHand().isBlackjack()){
+        if (playerHand.isBlackjack() && !dealerHand.isBlackjack()){
             player.blackjack();
         } 
-        if (!player.getPlayerHand().isBust() && dealer.getDealerHand().isBust()){
+        if (!playerHand.isBust() && dealerHand.isBust()){
             player.win();
         } 
         else{
-            if (player.getPlayerHand().getScore() == dealer.getDealerHand().getScore()){
+            if (playerHand.getScore() == dealerHand.getScore()){
                 player.tie();
             }
-            if (player.getPlayerHand().getScore() > dealer.getDealerHand().getScore()){
+            if (playerHand.getScore() > dealerHand.getScore()){
                 player.win();
             }
             else{
@@ -79,7 +82,6 @@ public class Main {
         game.getPlayer().placeBetsize(500);
         System.out.println(game);
         game.dealHands();
-        game.playerHit();
         game.dealerTurn();
         System.out.println(game);
         game.turnFinish();
