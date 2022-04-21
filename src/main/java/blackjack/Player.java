@@ -72,6 +72,7 @@ public class Player {
         newDeck.shuffleDeck();
         newDeck.deal(Li.getHand(), 3);
         System.out.println(Li);
+        System.out.println(Li.getHand().getScore());
         Li.placeBetsize(2000);
         Li.lose();
         System.out.println(Li);

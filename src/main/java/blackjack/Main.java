@@ -17,6 +17,10 @@ public class Main {
         return player;
     }
 
+    public Dealer getDealer(){
+        return dealer;
+    }
+
     public void dealHands(){
         player.getHand().clearHand();
         dealer.getHand().clearHand();
@@ -86,5 +90,6 @@ public class Main {
         System.out.println(game);
         game.turnFinish();
         System.out.println(game);
+        System.out.println(game.getPlayer().getHand().getScore());
     }
 }

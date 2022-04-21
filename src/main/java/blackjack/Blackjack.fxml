@@ -7,39 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="985.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
    <children>
       <Button layoutX="378.0" layoutY="450.0" mnemonicParsing="false" onAction="#doubleButton" text="Double" />
       <Button layoutX="477.0" layoutY="450.0" mnemonicParsing="false" onAction="#hitButton" text="Hit" />
       <Button layoutX="547.0" layoutY="450.0" mnemonicParsing="false" onAction="#standButton" text="Stand" />
-      <Button layoutX="580.0" layoutY="540.0" mnemonicParsing="false" onAction="#dealButtion" text="Deal Now" />
+      <Button layoutX="580.0" layoutY="540.0" mnemonicParsing="false" onAction="#dealButton" text="Deal Now" />
 
-      <TextField id="betAmount" fx:id="bet" layoutX="418.0" layoutY="540.0" />
+      <TextField fx:id="bet" layoutX="418.0" layoutY="540.0" />
       
       <Text layoutX="50.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" />
       <Text layoutX="150.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Bet:" />
       <Text layoutX="443.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLACE YOUR BETS:" />
 
-      <TextArea id="card1" editable="false" layoutX="40.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card2" editable="false" layoutX="175.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card3" editable="false" layoutX="310.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card4" editable="false" layoutX="445.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card5" editable="false" layoutX="580.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card6" editable="false" layoutX="715.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="card7" editable="false" layoutX="850.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card1" editable="false" layoutX="40.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card2" editable="false" layoutX="175.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card3" editable="false" layoutX="310.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card4" editable="false" layoutX="445.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card5" editable="false" layoutX="580.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card6" editable="false" layoutX="715.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="card7" editable="false" layoutX="850.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" />
 
-      <TextArea id="dealerCard1" editable="false" layoutX="40.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard2" editable="false" layoutX="175.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard3" editable="false" layoutX="310.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard4" editable="false" layoutX="445.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard5" editable="false" layoutX="580.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard6" editable="false" layoutX="715.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea id="dealerCard7" editable="false" layoutX="850.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard1" editable="false" layoutX="40.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard2" editable="false" layoutX="175.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard3" editable="false" layoutX="310.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard4" editable="false" layoutX="445.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard5" editable="false" layoutX="580.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard6" editable="false" layoutX="715.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard7" editable="false" layoutX="850.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
       
       <TextArea fx:id="balance" editable="false" layoutX="33.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <TextArea fx:id="totalBet" editable="false" layoutX="136.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
-
-      <Label fx:id="playerScore" layoutX="479.0" layoutY="275.0" text="Label" />
-      <Label fx:id="dealerScore" layoutX="479.0" layoutY="99.0" text="Label" />
+      <Label fx:id="dealerScore" layoutX="489.0" layoutY="99.0" text="0" />
+      <Label fx:id="playerScore" layoutX="489.0" layoutY="264.0" text="0" />
    </children>
 </AnchorPane>

@@ -81,6 +81,7 @@ public class Hand {
         System.out.println(player.getAceCount());
         System.out.println(player.getScore());
         System.out.println(player.isBust());
+        System.out.println(player.getCard(2));
         player.clearHand();
         System.out.println(player);
     }
