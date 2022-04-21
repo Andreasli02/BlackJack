@@ -22,7 +22,7 @@ public class Player {
         return betSize;
     }
 
-    public Hand getPlayerHand(){
+    public Hand getHand(){
         return playerHand;
     }
 
@@ -70,7 +70,7 @@ public class Player {
         Player Li = new Player();
         CardDeck newDeck = new CardDeck();
         newDeck.shuffleDeck();
-        newDeck.deal(Li.getPlayerHand(), 3);
+        newDeck.deal(Li.getHand(), 3);
         System.out.println(Li);
         Li.placeBetsize(2000);
         Li.lose();

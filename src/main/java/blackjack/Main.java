@@ -18,36 +18,36 @@ public class Main {
     }
 
     public void dealHands(){
-        player.getPlayerHand().clearHand();
-        dealer.getDealerHand().clearHand();
+        player.getHand().clearHand();
+        dealer.getHand().clearHand();
         deck = new CardDeck();
         deck.shuffleDeck();
 
-        deck.deal(player.getPlayerHand(), 2);
-        deck.deal(dealer.getDealerHand(), 1);
+        deck.deal(player.getHand(), 2);
+        deck.deal(dealer.getHand(), 1);
     }
     
     // happends if you stand
     public void dealerTurn(){
-        while(dealer.getDealerHand().getScore() < 17 && dealer.getDealerHand().getCardCount() < 7){
-            deck.deal(dealer.getDealerHand(), 1);
+        while(dealer.getHand().getScore() < 17 && dealer.getHand().getCardCount() < 7){
+            deck.deal(dealer.getHand(), 1);
         }
     }
 
     public void playerHit(){
-        deck.deal(player.getPlayerHand(), 1);
+        deck.deal(player.getHand(), 1);
     }
 
     public void playerDouble(){
-        deck.deal(player.getPlayerHand(), 1);
+        deck.deal(player.getHand(), 1);
         getPlayer().doubleBet();
         dealerTurn();
     }
 
     public void turnFinish(){
-        Hand playerHand = player.getPlayerHand();
-        Hand dealerHand = dealer.getDealerHand();
-        
+        Hand playerHand = player.getHand();
+        Hand dealerHand = dealer.getHand();
+
         if(playerHand.isBust()){
             player.lose();
         } 
