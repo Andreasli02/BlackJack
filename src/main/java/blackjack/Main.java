@@ -31,7 +31,6 @@ public class Main {
         deck.deal(dealer.getHand(), 1);
     }
     
-    // happends if you stand
     public void dealerTurn(){
         while(dealer.getHand().getScore() < 17 && dealer.getHand().getCardCount() < 7){
             deck.deal(dealer.getHand(), 1);
@@ -62,7 +61,7 @@ public class Main {
             player.win();
         } 
         else{
-            if (playerHand.getScore() == dealerHand.getScore()){
+            if (playerHand.getScore() == dealerHand.getScore() && !playerHand.isBust()){
                 player.tie();
             }
             if (playerHand.getScore() > dealerHand.getScore()){

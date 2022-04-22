@@ -8,17 +8,13 @@ import javafx.scene.control.TextField;
 public class BlackjackController {
     @FXML TextField bet;
     @FXML TextArea card1, card2, card3, card4, card5, card6, card7, dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, balance, totalBet;
-    @FXML Label playerScore, dealerScore;
+    @FXML Label playerScore, dealerScore, information;
 
     private Main blackjack;
 
     public void initialize() {
         blackjack = new Main();
         updateBalance();
-    }
-
-    public void doubleButton(){
-
     }
 
     public void hitButton(){
@@ -28,7 +24,10 @@ public class BlackjackController {
             playerCards[i].setText(String.valueOf(blackjack.getPlayer().getHand().getCard(i)));
         }
         updateScore();
-        
+        if(blackjack.getPlayer().getHand().isBust()){
+            blackjack.turnFinish();
+            updateBalance();
+        }
     }
 
     public void standButton(){
@@ -37,16 +36,37 @@ public class BlackjackController {
         for(int i = 1; i < blackjack.getDealer().getHand().getCardCount(); i++){
             dealerCards[i].setText(String.valueOf(blackjack.getDealer().getHand().getCard(i)));
         }
+        blackjack.turnFinish();
         updateScore();
+        updateBalance();
     }
 
-    // catch må fikses
+    public void dealButton(){
+        clearCards();
+        setBet();
+        updateBalance();
+        blackjack.dealHands();
+        card1.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(0)));
+        card2.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(1)));
+        dealerCard1.setText(String.valueOf(blackjack.getDealer().getHand().getCard(0)));
+        updateScore();
+        if(blackjack.getPlayer().getHand().isBlackjack()){
+            standButton();
+        }
+    }
+
+    public void doubleButton(){
+        blackjack.getPlayer().doubleBet();
+        hitButton();
+        standButton();
+    }
+
     public void setBet(){
-        int currentBet = Integer.parseInt(bet.getText());
         try {
+            int currentBet = Integer.parseInt(bet.getText());
             blackjack.getPlayer().placeBetsize(currentBet);
         } catch (NumberFormatException e) {
-            bet.setText("Et eller begge tallene er ugyldige");
+            information.setText("Bet amount must be a positive number");
         }
     }
 
@@ -67,16 +87,5 @@ public class BlackjackController {
             playerCards[i].setText("");
             dealerCards[i].setText("");
         }
-    }
-
-    public void dealButton(){
-        clearCards();
-        setBet();
-        updateBalance();
-        blackjack.dealHands();
-        card1.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(0)));
-        card2.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(1)));
-        dealerCard1.setText(String.valueOf(blackjack.getDealer().getHand().getCard(0)));
-        updateScore();
     }
 }
