@@ -10,10 +10,10 @@
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="985.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
    <children>
-      <Button layoutX="378.0" layoutY="450.0" mnemonicParsing="false" onAction="#doubleButton" text="Double" />
-      <Button layoutX="477.0" layoutY="450.0" mnemonicParsing="false" onAction="#hitButton" text="Hit" />
-      <Button layoutX="547.0" layoutY="450.0" mnemonicParsing="false" onAction="#standButton" text="Stand" />
-      <Button layoutX="580.0" layoutY="540.0" mnemonicParsing="false" onAction="#dealButton" text="Deal Now" />
+      <Button fx:id="doubleButton" layoutX="378.0" layoutY="450.0" mnemonicParsing="false" onAction="#doubleButton" text="Double" />
+      <Button fx:id="hitButton" layoutX="477.0" layoutY="450.0" mnemonicParsing="false" onAction="#hitButton" text="Hit" />
+      <Button fx:id="standButton" layoutX="547.0" layoutY="450.0" mnemonicParsing="false" onAction="#standButton" text="Stand" />
+      <Button fx:id="dealButton" layoutX="580.0" layoutY="540.0" mnemonicParsing="false" onAction="#dealButton" text="Deal Now" />
 
       <TextField fx:id="bet" layoutX="418.0" layoutY="540.0" />
       

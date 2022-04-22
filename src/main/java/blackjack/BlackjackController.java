@@ -1,6 +1,7 @@
 package blackjack;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -9,12 +10,14 @@ public class BlackjackController {
     @FXML TextField bet;
     @FXML TextArea card1, card2, card3, card4, card5, card6, card7, dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, balance, totalBet;
     @FXML Label playerScore, dealerScore, information;
+    @FXML Button hitButton, standButton, doubleButton, dealButton;
 
     private Main blackjack;
 
     public void initialize() {
         blackjack = new Main();
         updateBalance();
+        disableActionButtons();
     }
 
     public void hitButton(){
@@ -26,6 +29,7 @@ public class BlackjackController {
         updateScore();
         if(blackjack.getPlayer().getHand().isBust()){
             blackjack.turnFinish();
+            disableActionButtons();
             updateBalance();
         }
     }
@@ -37,11 +41,13 @@ public class BlackjackController {
             dealerCards[i].setText(String.valueOf(blackjack.getDealer().getHand().getCard(i)));
         }
         blackjack.turnFinish();
+        disableActionButtons();
         updateScore();
         updateBalance();
     }
 
     public void dealButton(){
+        enableActionButtons();
         clearCards();
         setBet();
         updateBalance();
@@ -59,6 +65,18 @@ public class BlackjackController {
         blackjack.getPlayer().doubleBet();
         hitButton();
         standButton();
+    }
+
+    public void disableActionButtons(){
+        hitButton.setDisable(true);
+        standButton.setDisable(true);
+        doubleButton.setDisable(true);
+    }
+
+    public void enableActionButtons(){
+        hitButton.setDisable(false);
+        standButton.setDisable(false);
+        doubleButton.setDisable(false);
     }
 
     public void setBet(){
