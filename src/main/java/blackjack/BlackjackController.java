@@ -30,6 +30,7 @@ public class BlackjackController {
         if(blackjack.getPlayer().getHand().isBust()){
             blackjack.turnFinish();
             disableActionButtons();
+            dealButton.setDisable(false);
             updateBalance();
         }
     }
@@ -42,6 +43,7 @@ public class BlackjackController {
         }
         blackjack.turnFinish();
         disableActionButtons();
+        dealButton.setDisable(false);
         updateScore();
         updateBalance();
     }
@@ -59,6 +61,7 @@ public class BlackjackController {
         if(blackjack.getPlayer().getHand().isBlackjack()){
             standButton();
         }
+        dealButton.setDisable(true);
     }
 
     public void doubleButton(){
