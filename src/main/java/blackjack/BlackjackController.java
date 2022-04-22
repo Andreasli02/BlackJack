@@ -28,10 +28,7 @@ public class BlackjackController {
         }
         updateScore();
         if(blackjack.getPlayer().getHand().isBust()){
-            blackjack.turnFinish();
-            disableActionButtons();
-            dealButton.setDisable(false);
-            updateBalance();
+            restartGameState();
         }
     }
 
@@ -41,11 +38,8 @@ public class BlackjackController {
         for(int i = 1; i < blackjack.getDealer().getHand().getCardCount(); i++){
             dealerCards[i].setText(String.valueOf(blackjack.getDealer().getHand().getCard(i)));
         }
-        blackjack.turnFinish();
-        disableActionButtons();
-        dealButton.setDisable(false);
         updateScore();
-        updateBalance();
+        restartGameState();
     }
 
     public void dealButton(){
@@ -58,10 +52,15 @@ public class BlackjackController {
         card2.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(1)));
         dealerCard1.setText(String.valueOf(blackjack.getDealer().getHand().getCard(0)));
         updateScore();
-        if(blackjack.getPlayer().getHand().isBlackjack()){
-            standButton();
-        }
         dealButton.setDisable(true);
+        if(blackjack.getPlayer().getHand().isBlackjack()){
+            blackjack.dealerGetCard();
+            dealerCard2.setText(String.valueOf(blackjack.getDealer().getHand().getCard(1)));
+            blackjack.turnFinish();
+            updateBalance();
+            disableActionButtons();
+            dealButton.setDisable(false);
+        }
     }
 
     public void doubleButton(){
@@ -107,6 +106,24 @@ public class BlackjackController {
         for(int i = 0; i < 7; i++){
             playerCards[i].setText("");
             dealerCards[i].setText("");
+        }
+    }
+
+    public void gameOver(){
+        information.setText("You lost! Try again another time");
+        hitButton.setDisable(true);
+        standButton.setDisable(true);
+        doubleButton.setDisable(true);
+        dealButton.setDisable(true);
+    }
+
+    public void restartGameState(){
+        blackjack.turnFinish();
+        updateBalance();
+        disableActionButtons();
+        dealButton.setDisable(false);
+        if(blackjack.getPlayer().getBalance() == 0){
+            gameOver();
         }
     }
 }

@@ -41,6 +41,11 @@ public class Main {
         deck.deal(player.getHand(), 1);
     }
 
+    // used exclusively for when player get blackjack
+    public void dealerGetCard(){
+        deck.deal(dealer.getHand(), 1);
+    }
+
     public void playerDouble(){
         deck.deal(player.getHand(), 1);
         getPlayer().doubleBet();
@@ -59,7 +64,7 @@ public class Main {
         } 
         if (!playerHand.isBust() && dealerHand.isBust()){
             player.win();
-        } 
+        }
         else{
             if (playerHand.getScore() == dealerHand.getScore() && !playerHand.isBust()){
                 player.tie();
