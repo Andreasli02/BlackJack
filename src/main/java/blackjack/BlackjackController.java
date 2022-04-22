@@ -6,7 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class BlackjackController {
-    @FXML TextField betAmount;
+    @FXML TextField bet;
     @FXML TextArea card1, card2, card3, card4, card5, card6, card7, dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, balance, totalBet;
     @FXML Label playerScore, dealerScore;
 
@@ -14,6 +14,7 @@ public class BlackjackController {
 
     public void initialize() {
         blackjack = new Main();
+        updateBalance();
     }
 
     public void doubleButton(){
@@ -39,6 +40,16 @@ public class BlackjackController {
         updateScore();
     }
 
+    // catch må fikses
+    public void setBet(){
+        int currentBet = Integer.parseInt(bet.getText());
+        try {
+            blackjack.getPlayer().placeBetsize(currentBet);
+        } catch (NumberFormatException e) {
+            bet.setText("Et eller begge tallene er ugyldige");
+        }
+    }
+
     public void updateScore(){
         dealerScore.setText(String.valueOf(blackjack.getDealer().getHand().getScore()));
         playerScore.setText(String.valueOf(blackjack.getPlayer().getHand().getScore()));
@@ -60,6 +71,7 @@ public class BlackjackController {
 
     public void dealButton(){
         clearCards();
+        setBet();
         updateBalance();
         blackjack.dealHands();
         card1.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(0)));

@@ -39,6 +39,6 @@
       <TextArea fx:id="balance" editable="false" layoutX="33.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <TextArea fx:id="totalBet" editable="false" layoutX="136.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <Label fx:id="dealerScore" layoutX="489.0" layoutY="99.0" text="0" />
-      <Label fx:id="playerScore" layoutX="489.0" layoutY="264.0" text="0" />
+      <Label fx:id="playerScore" layoutX="489.0" layoutY="275.0" text="0" />
    </children>
 </AnchorPane>
