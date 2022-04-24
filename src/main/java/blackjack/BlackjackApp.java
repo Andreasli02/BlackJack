@@ -20,4 +20,3 @@ public class BlackjackApp extends Application {
         primaryStage.show();
     }
 }
-    

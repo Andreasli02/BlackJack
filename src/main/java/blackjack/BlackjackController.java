@@ -43,9 +43,16 @@ public class BlackjackController {
     }
 
     public void dealButton(){
+        try{
+            setBet();
+        }
+        catch (NumberFormatException e) {
+            information.setText("Bet amount must be between 1 and your balance!");
+            return;
+        }
+        information.setText("Good luck!");
         enableActionButtons();
         clearCards();
-        setBet();
         updateBalance();
         blackjack.dealHands();
         card1.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(0)));
@@ -82,12 +89,8 @@ public class BlackjackController {
     }
 
     public void setBet(){
-        try {
             int currentBet = Integer.parseInt(bet.getText());
             blackjack.getPlayer().placeBetsize(currentBet);
-        } catch (NumberFormatException e) {
-            information.setText("Bet amount must be a positive number");
-        }
     }
 
     public void updateScore(){

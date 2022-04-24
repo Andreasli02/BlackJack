@@ -27,11 +27,11 @@ public class Player {
     }
 
     public void placeBetsize(int newBetSize){
-        if (newBetSize < 0){
-            throw new IllegalArgumentException("Bet size must be a positive number");
+        if (newBetSize <= 0){
+            throw new NumberFormatException("Bet size must be a positive number");
         }
         if (newBetSize > balance){
-            throw new IllegalArgumentException("You cannot bet more than own");
+            throw new NumberFormatException("You cannot bet more than own");
         }
         betSize = newBetSize;
         balance -= newBetSize;

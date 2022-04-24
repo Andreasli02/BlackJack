@@ -29,19 +29,19 @@
       <TextArea fx:id="card6" editable="false" layoutX="715.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
       <TextArea fx:id="card7" editable="false" layoutX="850.0" layoutY="292.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
 
-      <TextArea fx:id="dealerCard1" editable="false" layoutX="40.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard2" editable="false" layoutX="175.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard3" editable="false" layoutX="310.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard4" editable="false" layoutX="445.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard5" editable="false" layoutX="580.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard6" editable="false" layoutX="715.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
-      <TextArea fx:id="dealerCard7" editable="false" layoutX="850.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" />
+      <TextArea fx:id="dealerCard1" editable="false" layoutX="40.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard2" editable="false" layoutX="175.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard3" editable="false" layoutX="310.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard4" editable="false" layoutX="445.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard5" editable="false" layoutX="580.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard6" editable="false" layoutX="715.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
+      <TextArea fx:id="dealerCard7" editable="false" layoutX="850.0" layoutY="116.0" prefHeight="112.0" prefWidth="95.0" style="-fx-font-size: 24;" />
       
       <TextArea fx:id="balance" editable="false" layoutX="33.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <TextArea fx:id="totalBet" editable="false" layoutX="136.0" layoutY="534.0" prefHeight="17.0" prefWidth="77.0" />
       <Label fx:id="dealerScore" layoutX="489.0" layoutY="99.0" text="0" />
       <Label fx:id="playerScore" layoutX="489.0" layoutY="275.0" text="0" />
-      <Label fx:id="information" layoutX="178.0" layoutY="38.0" style="-fx-text-alignment: center;" text="This Blackjack game is played with 1 deck that gets shuffled for each new hand!">
+      <Label fx:id="information" layoutX="328.0" layoutY="43.0" style="-fx-text-alignment: center;" text="This Blackjack game is played with 1 deck">
          <font>
             <Font size="18.0" />
          </font>
