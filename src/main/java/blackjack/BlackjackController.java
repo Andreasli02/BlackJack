@@ -66,7 +66,8 @@ public class BlackjackController {
             blackjack.turnFinish();
             updateBalance();
             disableActionButtons();
-            dealButton.setDisable(false);
+            information.setText("Congratulations you got blackjack!");
+            dealButton.setDisable(false);   
         }
     }
 

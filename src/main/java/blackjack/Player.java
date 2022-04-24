@@ -31,7 +31,7 @@ public class Player {
             throw new NumberFormatException("Bet size must be a positive number");
         }
         if (newBetSize > balance){
-            throw new NumberFormatException("You cannot bet more than own");
+            throw new NumberFormatException("You cannot bet more than you own");
         }
         betSize = newBetSize;
         balance -= newBetSize;
