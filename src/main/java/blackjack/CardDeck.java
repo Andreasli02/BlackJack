@@ -12,7 +12,7 @@ public class CardDeck {
                 Card a = new Card(legalSuits[i], j + 1);
                 cards.add(a);
             }
-        }   
+        }
     }
 
     public int getCardCount(){

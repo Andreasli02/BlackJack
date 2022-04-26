@@ -63,7 +63,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "balance=" + String.valueOf(balance) + " betSize=" + String.valueOf(betSize) + " playerHand = " + String.valueOf(playerHand);
+        return "balance=" + String.valueOf(balance) + ", betSize=" + String.valueOf(betSize) + ", playerHand = " + String.valueOf(playerHand);
     }
 
     public static void main(String[] args) {
