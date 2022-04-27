@@ -13,9 +13,11 @@ public class BlackjackController {
     @FXML Button hitButton, standButton, doubleButton, dealButton;
 
     private Main blackjack;
+    private StandardFileHandler fileHandler;
 
     public void initialize() {
         blackjack = new Main();
+        fileHandler = new StandardFileHandler();
         updateBalance();
         disableActionButtons();
     }
@@ -60,6 +62,7 @@ public class BlackjackController {
         dealerCard1.setText(String.valueOf(blackjack.getDealer().getHand().getCard(0)));
         updateScore();
         dealButton.setDisable(true);
+        handleWritePlayerStats();
         if(blackjack.getPlayer().getHand().isBlackjack()){
             blackjack.dealerGetCard();
             dealerCard2.setText(String.valueOf(blackjack.getDealer().getHand().getCard(1)));
@@ -129,5 +132,9 @@ public class BlackjackController {
         if(blackjack.getPlayer().getBalance() == 0){
             gameOver();
         }
+    }
+
+    public void handleWritePlayerStats(){
+        fileHandler.writePlayerStatsToFile("test.txt", blackjack);            
     }
 }

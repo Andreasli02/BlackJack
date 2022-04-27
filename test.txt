@@ -1,0 +1,1 @@
+balance=2200, betSize=100, playerHand = [♠ 2, ♠ 8]

@@ -10,7 +10,6 @@ public class Main {
         deck.shuffleDeck();
         player = new Player();
         dealer = new Dealer();
-
     }
 
     public Player getPlayer(){
