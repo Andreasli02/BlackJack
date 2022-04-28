@@ -1,20 +1,27 @@
 package blackjack;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class StandardFileHandler implements FileHandler{
 
     @Override
     public void writePlayerStatsToFile(String filename, Main main){
-        try {
-			PrintWriter writer = new PrintWriter(filename);
-            writer.println(main.getPlayer());
-            // writer.flush();
-			writer.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+        PrintWriter writer = null;
+        try{
+            FileWriter newWriter = new FileWriter(filename, true);
+            writer = new PrintWriter(newWriter);
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        writer.println(main.getPlayer());
+        writer.close();
     }
 
     @Override

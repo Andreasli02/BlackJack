@@ -1,5 +1,8 @@
 package blackjack;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,6 +19,12 @@ public class BlackjackController {
     private StandardFileHandler fileHandler;
 
     public void initialize() {
+        // easiest way to create test.txt and clear it
+        try (PrintWriter pw = new PrintWriter("test.txt")) {
+            pw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         blackjack = new Main();
         fileHandler = new StandardFileHandler();
         updateBalance();
