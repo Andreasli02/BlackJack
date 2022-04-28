@@ -76,23 +76,4 @@ public class Main {
             }
         }
     }
-    
-
-    @Override
-    public String toString() {
-        return String.valueOf(dealer) + " | " + String.valueOf(player);
-    }
-
-    public static void main(String[] args) {
-        Main game = new Main();
-        System.out.println(game);
-        game.getPlayer().placeBetsize(500);
-        System.out.println(game);
-        game.dealHands();
-        game.dealerTurn();
-        System.out.println(game);
-        game.turnFinish();
-        System.out.println(game);
-        System.out.println(game.getPlayer().getHand().getScore());
-    }
 }

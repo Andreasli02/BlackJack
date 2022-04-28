@@ -1,1 +1,1 @@
-balance=1000, betSize=1500
+balance=2415, betSize=10
