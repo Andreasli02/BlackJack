@@ -1,6 +1,5 @@
 package blackjack;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
@@ -11,7 +10,7 @@ public class StandardFileHandler implements FileHandler{
         try {
 			PrintWriter writer = new PrintWriter(filename);
             writer.println(main.getPlayer());
-			writer.flush();
+            // writer.flush();
 			writer.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -23,8 +22,4 @@ public class StandardFileHandler implements FileHandler{
         // TODO Auto-generated method stub
         return null;
     }
-
-    public static File getFile(String filename) {
-		return new File(StandardFileHandler.class.getResource("\blackjack").getFile() + filename + ".txt");
-	}
 }

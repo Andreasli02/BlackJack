@@ -20,6 +20,7 @@ public class BlackjackController {
         fileHandler = new StandardFileHandler();
         updateBalance();
         disableActionButtons();
+        handleWritePlayerStats();
     }
 
     public void hitButton(){
@@ -29,6 +30,7 @@ public class BlackjackController {
             playerCards[i].setText(String.valueOf(blackjack.getPlayer().getHand().getCard(i)));
         }
         updateScore();
+        doubleButton.setDisable(true); 
         if(blackjack.getPlayer().getHand().isBust()){
             restartGameState();
         }
@@ -57,12 +59,15 @@ public class BlackjackController {
         clearCards();
         updateBalance();
         blackjack.dealHands();
+
         card1.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(0)));
         card2.setText(String.valueOf(blackjack.getPlayer().getHand().getCard(1)));
         dealerCard1.setText(String.valueOf(blackjack.getDealer().getHand().getCard(0)));
+
         updateScore();
         dealButton.setDisable(true);
         handleWritePlayerStats();
+
         if(blackjack.getPlayer().getHand().isBlackjack()){
             blackjack.dealerGetCard();
             dealerCard2.setText(String.valueOf(blackjack.getDealer().getHand().getCard(1)));
@@ -75,7 +80,12 @@ public class BlackjackController {
     }
 
     public void doubleButton(){
-        blackjack.getPlayer().doubleBet();
+        try{
+            blackjack.getPlayer().doubleBet();
+        } catch (NumberFormatException e){
+            information.setText("you cannot bet more than you own");
+            return;
+        }
         hitButton();
         standButton();
     }

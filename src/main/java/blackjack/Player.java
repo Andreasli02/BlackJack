@@ -14,10 +14,6 @@ public class Player {
         return balance;
     }
 
-    public int setBalance(int newBalance){
-        return this.balance = newBalance;
-    }
-
     public int getBetsize(){
         return betSize;
     }
@@ -38,6 +34,9 @@ public class Player {
     }
 
     public void doubleBet(){
+        if(betSize * 2 > balance){
+            throw new NumberFormatException("You cannot bet more than you own");
+        }
         balance -= betSize;
         this.betSize = betSize * 2;
     }
@@ -63,18 +62,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "balance=" + String.valueOf(balance) + ", betSize=" + String.valueOf(betSize) + ", playerHand = " + String.valueOf(playerHand);
-    }
-
-    public static void main(String[] args) {
-        Player Li = new Player();
-        CardDeck newDeck = new CardDeck();
-        newDeck.shuffleDeck();
-        newDeck.deal(Li.getHand(), 3);
-        System.out.println(Li);
-        System.out.println(Li.getHand().getScore());
-        Li.placeBetsize(2000);
-        Li.lose();
-        System.out.println(Li);
+        return "balance=" + String.valueOf(balance) + ", betSize=" + String.valueOf(betSize);
     }
 }

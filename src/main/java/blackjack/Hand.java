@@ -55,9 +55,8 @@ public class Hand {
         return getCardCount() == 2 && getScore() == 21;
     }
 
-    // Used by cardDeck to deal cards
     public void addCard(Card newCard){
-        if(hand.size() >= 7){
+        if(getCardCount() >= 7){
             throw new IllegalArgumentException("Hand cannot have more than 7 cards");
         }
 		hand.add(newCard);
@@ -70,19 +69,5 @@ public class Hand {
     @Override
     public String toString() {
         return String.valueOf(hand);
-    }
-
-    public static void main(String[] args) {
-        Hand player = new Hand();
-        CardDeck newDeck = new CardDeck();
-        newDeck.shuffleDeck();
-        newDeck.deal(player, 4);
-        System.out.println(player);
-        System.out.println(player.getAceCount());
-        System.out.println(player.getScore());
-        System.out.println(player.isBust());
-        System.out.println(player.getCard(2));
-        player.clearHand();
-        System.out.println(player);
     }
 }

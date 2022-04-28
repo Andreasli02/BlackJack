@@ -55,11 +55,4 @@ public class CardDeck {
     public String toString() {
         return String.valueOf(cards);
     }
-
-    public static void main(String[] args) {
-        CardDeck kortstokk1 = new CardDeck();
-        kortstokk1.shuffleDeck();
-        System.out.println(kortstokk1);
-        System.out.println(kortstokk1.getCardCount());
-    }
 }
