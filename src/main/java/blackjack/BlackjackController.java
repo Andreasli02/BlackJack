@@ -75,7 +75,6 @@ public class BlackjackController {
 
         updateScore();
         dealButton.setDisable(true);
-        handleWritePlayerStats();
 
         if(blackjack.getPlayer().getHand().isBlackjack()){
             blackjack.dealerGetCard();
@@ -84,7 +83,8 @@ public class BlackjackController {
             updateBalance();
             disableActionButtons();
             information.setText("Congratulations you got blackjack!");
-            dealButton.setDisable(false);   
+            dealButton.setDisable(false);
+            handleWritePlayerStats();
         }
     }
 
@@ -148,6 +148,7 @@ public class BlackjackController {
         updateBalance();
         disableActionButtons();
         dealButton.setDisable(false);
+        handleWritePlayerStats();
         if(blackjack.getPlayer().getBalance() == 0){
             gameOver();
         }
