@@ -1,6 +1,0 @@
-balance=2500
-balance=2400
-balance=2500
-balance=2400
-balance=2300
-balance=2200

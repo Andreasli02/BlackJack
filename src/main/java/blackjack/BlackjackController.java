@@ -19,8 +19,8 @@ public class BlackjackController {
     private StandardFileHandler fileHandler;
 
     public void initialize() {
-        // easiest way to create test.txt and clear it
-        try (PrintWriter pw = new PrintWriter("test.txt")) {
+        //create test.txt and clear it
+        try (PrintWriter pw = new PrintWriter("PlayerStats.txt")) {
             pw.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -155,6 +155,6 @@ public class BlackjackController {
     }
 
     public void handleWritePlayerStats(){
-        fileHandler.writePlayerStatsToFile("test.txt", blackjack);            
+        fileHandler.writePlayerStatsToFile("PlayerStats.txt", blackjack);            
     }
 }
