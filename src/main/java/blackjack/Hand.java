@@ -65,9 +65,4 @@ public class Hand {
     public void clearHand(){
         hand.clear();
     }
-    
-    @Override
-    public String toString() {
-        return String.valueOf(hand);
-    }
 }

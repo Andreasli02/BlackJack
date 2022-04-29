@@ -10,8 +10,4 @@ public class Dealer {
     public Hand getHand(){
         return dealerHand;
     }
-
-    public String toString(){
-        return String.valueOf(dealerHand);
-    }
 }

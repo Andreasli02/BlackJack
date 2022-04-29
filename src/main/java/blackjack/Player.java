@@ -59,7 +59,7 @@ public class Player {
         balance += 2.5 *betSize;
         betSize = 0;
     }
-
+    
     @Override
     public String toString() {
         return "balance= " + String.valueOf(balance);

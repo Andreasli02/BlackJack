@@ -51,6 +51,7 @@ public class CardDeck {
        cards = shuffledDeck;
     }
     
+    // used in test
     @Override
     public String toString() {
         return String.valueOf(cards);
