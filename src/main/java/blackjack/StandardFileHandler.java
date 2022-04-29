@@ -46,7 +46,7 @@ public class StandardFileHandler implements FileHandler{
         catch (FileNotFoundException e){
             e.printStackTrace();
         }
-        String listString = String.join("\n",stats);
-        return listString;
+        String statsAsString = String.join("\n",stats);
+        return statsAsString;
     }
 }

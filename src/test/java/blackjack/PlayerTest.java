@@ -18,6 +18,7 @@ public class PlayerTest {
     void testPlaceBetsize() {
         assertThrows(NumberFormatException.class, () -> {player.placeBetsize(0);});
         assertThrows(NumberFormatException.class, () -> {player.placeBetsize(2501);});
+        
 
         player.placeBetsize(1000);
         assertEquals(1000, player.getBetsize());
