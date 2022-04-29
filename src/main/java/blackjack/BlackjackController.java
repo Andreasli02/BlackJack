@@ -19,7 +19,7 @@ public class BlackjackController {
     private StandardFileHandler fileHandler;
 
     public void initialize() {
-        //create test.txt and clear it
+        //create playerStats.txt and clears it
         try (PrintWriter pw = new PrintWriter("PlayerStats.txt")) {
             pw.close();
         } catch (FileNotFoundException e) {
@@ -30,7 +30,6 @@ public class BlackjackController {
         updateBalance();
         disableActionButtons();
         handleWritePlayerStats();
-        handleGetPlayerStats();
         playerStats.setVisible(false);
     }
 
