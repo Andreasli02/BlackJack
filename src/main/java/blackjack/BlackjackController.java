@@ -11,9 +11,9 @@ import javafx.scene.control.TextField;
 
 public class BlackjackController {
     @FXML TextField bet;
-    @FXML TextArea card1, card2, card3, card4, card5, card6, card7, dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, balance, totalBet;
+    @FXML TextArea card1, card2, card3, card4, card5, card6, card7, dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, balance, totalBet, playerStats;
     @FXML Label playerScore, dealerScore, information;
-    @FXML Button hitButton, standButton, doubleButton, dealButton;
+    @FXML Button hitButton, standButton, doubleButton, dealButton, statsButton;
 
     private Main blackjack;
     private StandardFileHandler fileHandler;
@@ -30,6 +30,8 @@ public class BlackjackController {
         updateBalance();
         disableActionButtons();
         handleWritePlayerStats();
+        handleGetPlayerStats();
+        playerStats.setVisible(false);
     }
 
     public void hitButton(){
@@ -85,6 +87,7 @@ public class BlackjackController {
             information.setText("Congratulations you got blackjack!");
             dealButton.setDisable(false);
             handleWritePlayerStats();
+            handleGetPlayerStats();
         }
     }
 
@@ -97,6 +100,15 @@ public class BlackjackController {
         }
         hitButton();
         standButton();
+    }
+
+    public void statsButton(){
+        if(playerStats.isVisible()){
+            playerStats.setVisible(false);
+        }
+        else{
+            playerStats.setVisible(true);
+        }
     }
 
     public void disableActionButtons(){
@@ -149,6 +161,7 @@ public class BlackjackController {
         disableActionButtons();
         dealButton.setDisable(false);
         handleWritePlayerStats();
+        handleGetPlayerStats();
         if(blackjack.getPlayer().getBalance() == 0){
             gameOver();
         }
@@ -156,5 +169,9 @@ public class BlackjackController {
 
     public void handleWritePlayerStats(){
         fileHandler.writePlayerStatsToFile("PlayerStats.txt", blackjack);            
+    }
+
+    public void handleGetPlayerStats(){
+        playerStats.setText(fileHandler.getPlayerStatsFromFile("PlayerStats.txt"));
     }
 }

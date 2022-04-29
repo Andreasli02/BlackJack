@@ -1,9 +1,13 @@
 package blackjack;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class StandardFileHandler implements FileHandler{
 
@@ -25,8 +29,24 @@ public class StandardFileHandler implements FileHandler{
     }
 
     @Override
-    public Main getPlayerStatsFromFile(String filename) throws FileNotFoundException {
-        // TODO Auto-generated method stub
-        return null;
+    public String getPlayerStatsFromFile(String filename){
+        ArrayList<String> stats = new ArrayList<String>();
+        try{
+            File myFile = new File(filename);
+            Scanner newScanner = new Scanner(myFile);
+            while(newScanner.hasNext()){
+                String playerStats = newScanner.nextLine();
+                stats.add(playerStats);
+            }
+            newScanner.close();
+        }
+        catch (NoSuchElementException e){
+            e.printStackTrace();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        String listString = String.join("\n",stats);
+        return listString;
     }
 }

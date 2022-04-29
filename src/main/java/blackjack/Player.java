@@ -62,6 +62,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "balance=" + String.valueOf(balance);
+        return "balance= " + String.valueOf(balance);
     }
 }

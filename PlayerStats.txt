@@ -1,1 +1,15 @@
-balance=2500
+balance= 2500
+balance= 2500
+balance= 2700
+balance= 2500
+balance= 2400
+balance= 2300
+balance= 2200
+balance= 2100
+balance= 2000
+balance= 2000
+balance= 1900
+balance= 2000
+balance= 1900
+balance= 2100
+balance= 2000
