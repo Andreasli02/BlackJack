@@ -76,7 +76,7 @@ public class BlackjackController {
 
         updateScore();
         dealButton.setDisable(true);
-
+        
         if(blackjack.getPlayer().getHand().isBlackjack()){
             blackjack.dealerGetCard();
             dealerCard2.setText(String.valueOf(blackjack.getDealer().getHand().getCard(1)));
@@ -123,8 +123,8 @@ public class BlackjackController {
     }
 
     public void setBet(){
-            int currentBet = Integer.parseInt(bet.getText());
-            blackjack.getPlayer().placeBetsize(currentBet);
+        int currentBet = Integer.parseInt(bet.getText());
+        blackjack.getPlayer().placeBetsize(currentBet);
     }
 
     public void updateScore(){
