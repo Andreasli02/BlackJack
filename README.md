@@ -1,4 +1,4 @@
-#Blackjack 
+# Blackjack 
 
 Projekt i faget objektorientert programmering der jeg lagde blackjack med Java med javaFX
 
